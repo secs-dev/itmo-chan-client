@@ -3,7 +3,5 @@ import { TheWelcome } from '@/widgets/the-welcome'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <TheWelcome />
 </template>
