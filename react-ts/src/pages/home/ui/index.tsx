@@ -1,9 +1,48 @@
 import { useState } from "react";
 import reactLogo from "@/shared/ui/assets/react.svg";
 import viteLogo from "@/shared/ui/assets/react.svg";
+import { Layout } from "@/shared/ui/layout";
+import {
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+} from "@ant-design/icons";
 import "./index.css";
 
-export const Home = () => {
+const items = [
+  {
+    key: "1",
+    icon: <UserOutlined />,
+    label: "user",
+  },
+  {
+    key: "2",
+    icon: <VideoCameraOutlined />,
+    label: "video",
+  },
+  {
+    key: "3",
+    icon: <UploadOutlined />,
+    label: "upload",
+    children: [
+      {
+        key: "31",
+        icon: <UserOutlined />,
+        label: "user",
+      },
+      {
+        key: "32",
+        icon: <VideoCameraOutlined />,
+        label: "video",
+      },
+    ],
+  },
+];
+export const AntdHome = () => {
+  return <Layout items={items} defaultSelectedKeys={["1"]} />;
+};
+
+export const OldHome = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -30,4 +69,4 @@ export const Home = () => {
       </p>
     </>
   );
-}
+};
