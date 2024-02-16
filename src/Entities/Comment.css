@@ -1,0 +1,31 @@
+.comment {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.comment-content {
+    font-size: 14px;
+}
+
+.comment-details {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.comment-details span {
+    margin-right: 10px;
+}
+
+.comment-author {
+    color: #0079d3; /* Синий цвет для имени автора */
+}
+
+.comment-replies, .comment-replied-to {
+    color: #888;
+}
+
+.comment-files-ids, .comment-poll-id {
+    color: #555;
+}

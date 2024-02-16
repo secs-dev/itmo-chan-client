@@ -1,0 +1,18 @@
+.thread {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.thread-content {
+    font-size: 14px;
+}
+
+.thread-content p {
+    margin-bottom: 5px;
+}
+
+.thread-content p:last-child {
+    margin-bottom: 0;
+}
