@@ -1,0 +1,37 @@
+.thread {
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.thread-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.thread-id {
+    font-weight: bold;
+}
+
+.thread-popularity {
+    color: #888;
+}
+
+.thread-content {
+    color: #333;
+}
+
+.thread-topic {
+    margin-bottom: 5px;
+}
+
+.thread-init-comment {
+}
+
+.thread-comments {
+    margin-left: 13px;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+}

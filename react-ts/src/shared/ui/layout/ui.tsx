@@ -1,12 +1,9 @@
-import { Button, Image, Layout, Menu, MenuProps, Space } from "antd";
+import { Button, Image, Layout, Menu, MenuProps } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { Content, Header } from "antd/es/layout/layout";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
 } from "@ant-design/icons";
 import { useState } from "react";
 

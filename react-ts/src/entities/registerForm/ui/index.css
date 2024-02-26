@@ -1,0 +1,9 @@
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.register-form h4 {
+    text-align: center;
+}

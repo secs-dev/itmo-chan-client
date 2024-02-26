@@ -1,7 +1,7 @@
 import { 
-    SidebarProps,
-    MySidebar, 
-    AntDMenu as Sidebar 
+    //SidebarProps,
+    //MySidebar as Sidebar1,
+    AntDMenu as Sidebar
 } from "./ui";
 
 export { Sidebar };

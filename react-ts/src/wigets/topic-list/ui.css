@@ -1,0 +1,29 @@
+.topic-list-div {
+    display: grid;
+    /*justify-content:*/
+    grid-template: repeat(8, 1fr) / repeat(4, 1fr);
+    gap: 3dvb;
+}
+
+.topic-list-button {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    margin: 10px;
+    color:#444;
+    border:1px solid #CCC;
+    /*background:#DDD;*/
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor:pointer;
+    vertical-align:middle;
+    horiz-align: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.topic-list-button:active {
+    color:red;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}

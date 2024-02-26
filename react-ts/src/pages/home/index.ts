@@ -1,4 +1,3 @@
-export { 
-    OldHome, 
-    AntdHome as Home 
+export {
+    Home
 } from "./ui";

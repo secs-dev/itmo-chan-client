@@ -1,0 +1,25 @@
+.header {
+    display: grid;
+    /*grid-auto-flow: column;*/
+    grid-template-columns: 40% 20% 40%;
+    grid-auto-rows: 4rem;
+    min-height: 4rem;
+    /*padding: 10px;*/
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.header h1 {
+    text-align: center;
+    margin-top: 0;
+    color: black;
+}
+
+.header img {
+    margin-top: 0;
+    vertical-align: center;
+}
+
+.header-user-header-panel {
+    margin-top: -1rem;
+}

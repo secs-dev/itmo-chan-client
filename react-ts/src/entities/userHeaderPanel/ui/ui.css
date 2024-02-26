@@ -1,0 +1,21 @@
+.user-header-panel {
+    margin: auto;
+    width: 100%;
+    height: 50%;
+    text-align: right;
+}
+
+.user-header-panel-icon {
+    font-size: 20px;
+}
+
+.user-logged-in {
+    font-size: 20px;
+}
+
+.user-logged-out {
+    font-size: 20px;
+}
+
+.user-header-panel-dropdown {
+}
