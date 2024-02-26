@@ -10,4 +10,5 @@ export type {
     UserRegister,
     UserAuth,
     AuthenticationResponseEntity,
+    CommentDTOEntity
 } from "./interfaces.ts"

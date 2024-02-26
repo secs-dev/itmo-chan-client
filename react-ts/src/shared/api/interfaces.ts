@@ -36,6 +36,12 @@ export interface CommentEntity {
     deleted : boolean,
 }
 
+export interface CommentDTOEntity {
+    threadId : number,
+    title : string | null,
+    content : string,
+}
+
 export interface FilesIdsEntity {
     picturesIds : number[],
     videosIds : number[],
@@ -61,4 +67,9 @@ export type JwtToken = string;
 export interface AuthenticationResponseEntity {
     username: string;
     accessToken: JwtToken;
+}
+
+export interface ErrorBackend {
+    code?: number,
+    message?: string,
 }

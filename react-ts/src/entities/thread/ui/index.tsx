@@ -5,10 +5,10 @@ import './index.css';
 interface ThreadProps {
     thread: ThreadEntity,
     initComment: ReactNode,
-    comments: ReactNode[],
+    children: ReactNode,
 }
 
-export const Thread = ({ thread, initComment, comments }: ThreadProps) => {
+export const Thread = ({ thread, initComment, children}: ThreadProps) => {
     return (
         <div className="thread">
             <div className="thread-header">
@@ -18,10 +18,7 @@ export const Thread = ({ thread, initComment, comments }: ThreadProps) => {
             <div className="thread-init-comment">
                 {initComment}
             </div>
-            <div className={"thread-comments"}>
-                <p>Comments</p>
-                {comments}
-            </div>
+            {children}
         </div>
     );
 }

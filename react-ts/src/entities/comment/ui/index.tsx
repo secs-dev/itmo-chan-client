@@ -5,20 +5,25 @@ import {Reply} from "@/entities/reply";
 import {Poll} from "@/entities/poll";
 import {Picture} from "@/entities/picture";
 import {Video} from "@/entities/video";
+import {Button} from "antd";
 
 interface CommentProps {
-    comment?: CommentResponseEntity
+    comment?: CommentResponseEntity,
+    openDrawer: Function,
 }
 
-export const Comment = ({comment}: CommentProps) => {
+export const Comment = ({comment, openDrawer}: CommentProps) => {
     return comment && !comment.comment.deleted ?
         (<div className="comment">
         <div className="comment-header">
         <span className="comment-author">{comment.username} </span>
             <span className="comment-date">{dateArrayToDate(comment.comment.creationDate).toLocaleString()} </span>
-    <span className="comment-id">№{comment.comment.commentId} </span>
+            <Button type="text" onClick={openDrawer(comment.comment.commentId, comment.comment.threadId)}>
+                <span className="comment-id">№{comment.comment.commentId} </span>
+            </Button>
     </div>
     <div className="comment-replied-to">
+        {  comment.repliedTo.length ? <span style={{color: "black"}}>Отвечено на:</span> : <></> }
         {comment.repliedTo.map(cId => (
                 <Reply key={cId} commentId={cId}/>
 ))}
@@ -41,6 +46,7 @@ export const Comment = ({comment}: CommentProps) => {
     ))}
     </div>
     <div className="comment-replies">
+        {  comment.replies.length ? <span style={{color: "black"}}>Ответы: </span> : <></> }
         {comment.replies.map(cId => (
                 <Reply key={cId} commentId={cId}/>
 ))}

@@ -41,3 +41,13 @@
     line-height: 1.5;
     font-weight: bold;
 }
+
+.comment-replied-to {
+    display: flex;
+    color: #0091ff;
+}
+
+.comment-replies {
+    display: flex;
+    color: #0091ff;
+}
