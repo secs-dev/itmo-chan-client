@@ -4,6 +4,7 @@ import {Comment, Thread} from "@/entities";
 import {Button, Spin} from "antd";
 import "./ui.css"
 import {fetch} from "../model";
+import {ThreadForm} from "@/entities/threadForm";
 
 interface TopicThreadsProps {
     topicId: number,
@@ -13,6 +14,12 @@ export const TopicThreads = ({topicId, openDrawer}: TopicThreadsProps) => {
     const [topicThreads, setTopicThreads] = useState<TopicThreadEntity|null>(null);
     const [threads, setThreads] = useState<ThreadCommentsEntity[]>([]);
     const [expandedThreads, setExpandedThreads] = useState<number[]>([])
+    const [addNewThread, setAddNewThread] = useState(false)
+    const [submitThread, setSubmitThread] = useState(false)
+    const onCloseThread = () => {
+        setAddNewThread(false)
+    }
+
     useEffect(() => {
         fetch({topicId, setTopicThreads, setThreads});
     }, [])
@@ -21,6 +28,18 @@ export const TopicThreads = ({topicId, openDrawer}: TopicThreadsProps) => {
             {topicThreads ? (
                 <>
                     <h2>{topicThreads.topic.name}</h2>
+                    <Button style={{display: "flex"}} onClick={()=>setAddNewThread(true)}>Добавить новый тред</Button>
+                    {addNewThread ? (
+                        <>
+                        <Button onClick={()=>setSubmitThread(true)}>Отправить</Button>
+                        <ThreadForm
+                            topicId={topicId}
+                            onClose={onCloseThread}
+                            submitThread={submitThread}
+                            setSubmitThread={setSubmitThread}
+                        >
+                        </ThreadForm> </>): <></>
+                    }
                     <div className="threads">
                         {
                             threads.map(thread => (

@@ -42,6 +42,12 @@ export interface CommentDTOEntity {
     content : string,
 }
 
+export interface ThreadDTOEntity {
+    topicId : number,
+}
+
+
+
 export interface FilesIdsEntity {
     picturesIds : number[],
     videosIds : number[],
