@@ -4,15 +4,20 @@ import {CommentDTOEntity} from "@/shared/api";
 import {$authStore} from "@/features/auth";
 import {throwErrorFx} from "@/shared/error";
 import {ErrorBackend, ThreadDTOEntity} from "@/shared/api/interfaces.ts";
+import {GetProp, UploadFile, UploadProps} from "antd";
 
 const BACKEND_URL = "http://localhost:8080"
+type FileType = Parameters<GetProp<UploadProps, 'beforeUpload'>>[0];
 
-export async function addThread(formData: IFormData, topicId: number, onClose: any) {
+export async function addThread(formData: IFormData, topicId: number, fileList: UploadFile[], onClose: any) {
     const data= new FormData()
     const comment: CommentDTOEntity = {threadId: -1, title: formData.title ? formData.title : null, content: formData.content}
     const thread: ThreadDTOEntity = {topicId: topicId}
     data.append('comment', new Blob([JSON.stringify(comment)], {type: "application/json"}))
     data.append('thread', new Blob([JSON.stringify(thread)], {type : 'application/json'}))
+    fileList.forEach((file) => {
+        data.append('files', file as FileType);
+    });
     const config= {
         "headers": {
              "content-type": 'multipart/form-data;',

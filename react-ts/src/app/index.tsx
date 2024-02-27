@@ -12,12 +12,14 @@ export const App = () => {
     const [messageApi, contextHolder] = message.useMessage();
     useEffect(() => {
         $errorStore.watch(state => {
-            if (state?.message)
-                messageApi.error(state?.message)
             if (state?.code === 401) {
                 logoutFx()
+                messageApi.error("Вы не авторизированны")
             }
-        })
+            else
+                if (state?.message)
+                    messageApi.error(state?.message)
+            })
     }, [])
 
   return (
