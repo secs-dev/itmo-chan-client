@@ -1,3 +1,3 @@
 export {
-    Video
+    MyVideo
 } from "./ui"

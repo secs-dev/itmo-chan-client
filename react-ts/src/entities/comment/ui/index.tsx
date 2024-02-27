@@ -4,11 +4,12 @@ import {dateArrayToDate} from "@/shared/utils";
 import {Reply} from "@/entities/reply";
 import {Poll} from "@/entities/poll";
 import {Picture} from "@/entities/picture";
-import {Video} from "@/entities/video";
+import {MyVideo} from "@/entities/video";
 import {Button} from "antd";
 
 interface CommentProps {
     comment?: CommentResponseEntity,
+    // eslint-disable-next-line @typescript-eslint/ban-types
     openDrawer: Function,
 }
 
@@ -42,7 +43,7 @@ export const Comment = ({comment, openDrawer}: CommentProps) => {
                 <Picture key={pId} pictureId={pId}/>
 ))}
     {comment.filesIds.videosIds.map(vId => (
-        <Video key={vId} videoId={vId}/>
+        <MyVideo key={vId} videoId={vId}/>
     ))}
     </div>
     <div className="comment-replies">
