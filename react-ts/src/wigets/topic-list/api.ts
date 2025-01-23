@@ -1,7 +1,5 @@
 import axios from "axios";
-import {TopicEntity} from "@/shared/api";
-
-const BACKEND_URL = "http://localhost:8080"
+import {BACKEND_URL, TopicEntity} from "@/shared/api";
 
 export async function fetchTopics() {
     try {

@@ -1,13 +1,12 @@
 import {Image} from "antd";
+import {BACKEND_URL} from "@/shared/api";
 
 interface PictureProps {
     pictureId: number;
 }
 
-const BACKEND_URL = "http://localhost:8080"
-
 export const Picture = ({pictureId}: PictureProps) => {
     return (
-            <Image style={{padding: "2px"}} src={`${BACKEND_URL}/api/media/pic/${pictureId}`} width={200} ></Image>
+            <Image style={{padding: "2px"}} src={`${BACKEND_URL}/api/media/${pictureId}`} width={200} ></Image>
     )
 }

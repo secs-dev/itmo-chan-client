@@ -1,6 +1,6 @@
 import {createEffect, createStore} from 'effector';
 import { persist } from 'effector-storage/session'
-import {AuthenticationResponseEntity, UserAuth, UserRegister} from "@/shared/api";
+import {AuthenticationResponseEntity, BACKEND_URL, UserAuth, UserRegister} from "@/shared/api";
 import axios from "axios";
 import {AuthState, initialAuthState} from "../lib";
 
@@ -12,7 +12,7 @@ export const registerFx = createEffect<UserRegister, AuthState, Error>({
     handler: async (userRegister) => {
         try {
             const response =
-                await axios.post<AuthenticationResponseEntity>('http://localhost:8080/api/auth/register',
+                await axios.post<AuthenticationResponseEntity>(`${BACKEND_URL}/api/auth/register`,
                     JSON.stringify(userRegister),
                     {
                         method: 'POST',
@@ -31,7 +31,7 @@ export const registerFx = createEffect<UserRegister, AuthState, Error>({
 export const loginFx = createEffect<UserAuth, AuthState, Error>({
     handler: async (userData) => {
         try {
-            const response = await axios.post<AuthenticationResponseEntity>('http://localhost:8080/api/auth/login',
+            const response = await axios.post<AuthenticationResponseEntity>(`${BACKEND_URL}/api/auth/login`,
                 JSON.stringify(userData),
                 {
                     method: 'POST',

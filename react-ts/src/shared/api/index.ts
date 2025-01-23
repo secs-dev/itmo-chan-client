@@ -1,5 +1,5 @@
 export {
-    api,
+    api, BACKEND_URL
 } from "./api";
 
 export type {

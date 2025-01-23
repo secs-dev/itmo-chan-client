@@ -1,8 +1,6 @@
 import axios from "axios";
-import {TopicThreadEntity} from "@/shared/api";
+import {BACKEND_URL, TopicThreadEntity} from "@/shared/api";
 import {ThreadCommentsEntity} from "@/shared/api/interfaces.ts";
-
-const BACKEND_URL = "http://localhost:8080"
 
 export async function fetchTopic(topicId: number) {
     try {

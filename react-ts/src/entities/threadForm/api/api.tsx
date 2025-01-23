@@ -1,12 +1,11 @@
 import {IFormData} from "../model";
 import axios, {AxiosError} from "axios";
-import {CommentDTOEntity} from "@/shared/api";
+import {BACKEND_URL, CommentDTOEntity} from "@/shared/api";
 import {$authStore} from "@/features/auth";
 import {throwErrorFx} from "@/shared/error";
 import {ErrorBackend, ThreadDTOEntity} from "@/shared/api/interfaces.ts";
 import {GetProp, UploadFile, UploadProps} from "antd";
 
-const BACKEND_URL = "http://localhost:8080"
 type FileType = Parameters<GetProp<UploadProps, 'beforeUpload'>>[0];
 
 export async function addThread(formData: IFormData, topicId: number, fileList: UploadFile[], onClose: any) {
