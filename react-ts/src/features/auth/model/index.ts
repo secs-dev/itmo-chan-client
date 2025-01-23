@@ -3,6 +3,7 @@ import { persist } from 'effector-storage/session'
 import {AuthenticationResponseEntity, BACKEND_URL, UserAuth, UserRegister} from "@/shared/api";
 import axios from "axios";
 import {AuthState, initialAuthState} from "../lib";
+import {Roles} from "@/features/auth/model/Roles.ts";
 
 export const $authStore = createStore<AuthState>(initialAuthState);
 
@@ -69,6 +70,8 @@ const fillAuthState = (response: AuthenticationResponseEntity): AuthState => {
 }
 
 export const $isAuthenticated = $authStore.map(state => state.isAuthenticated)
+
+export const $isAdminOrModerator = $authStore.map(state => state.privileges.includes(Roles.MODERATOR.toString()) || state.privileges.includes(Roles.ADMIN.toString()))
 
 $authStore.on(loginFx.doneData, (_, result) => result);
 $authStore.on(loginFx.failData, (_, error) => ({ ...initialAuthState, loading: false, error: error.message }));

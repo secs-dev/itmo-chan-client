@@ -79,3 +79,8 @@ export interface ErrorBackend {
     code?: number,
     message?: string,
 }
+
+export interface TopicDto {
+    name : string,
+    description : number,
+}
